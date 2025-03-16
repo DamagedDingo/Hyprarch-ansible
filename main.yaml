@@ -1,0 +1,12 @@
+- name: Machine setup
+  hosts: localhost
+  become: yes
+  connection: local
+  gather_facts: true
+
+  tasks:
+
+  - name: Run the equivalent of "pacman -Syu"
+    community.general.pacman:
+      update_cache: true
+      upgrade: true
